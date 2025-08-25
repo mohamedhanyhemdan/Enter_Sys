@@ -8,6 +8,7 @@ ASM_SRCS :=
 C_SRCS := 
 S_UPPER_SRCS := 
 O_SRCS := 
+FLASH_IMAGE := 
 ELFS := 
 OBJS := 
 ASM_DEPS := 
@@ -19,7 +20,9 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+. \
 SRC/HAL/BUTTON \
+SRC/HAL/KEYPAD \
 SRC/HAL/LCD \
 SRC/HAL/LED \
 SRC/HAL/SSD \
@@ -28,5 +31,5 @@ SRC/MCAL/DIO \
 SRC/MCAL/EXTI \
 SRC/MCAL/GIE \
 SRC/MCAL/SPI \
-. \
+SRC/MCAL/UART \
 

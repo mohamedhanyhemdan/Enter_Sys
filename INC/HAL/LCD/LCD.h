@@ -8,10 +8,10 @@
 #ifndef INC_HAL_LCD_H_
 #define INC_HAL_LCD_H_
 
-#define LCD_RSGroup    GroupA
-#define LCD_RWGroup    GroupA
-#define LCD_EGroup     GroupA
-#define LCD_DataGroup  GroupC
+#define LCD_RSGroup    GroupC
+#define LCD_RWGroup    GroupC
+#define LCD_EGroup     GroupC
+#define LCD_DataGroup  GroupB
 
 #define LCD_RSPin      Pin0
 #define LCD_RWPin      Pin1

@@ -13,7 +13,37 @@
 
 void mEXTI0_Enable(uint8_t SensControl)
 {
+    // Clear ISC00 and ISC01 bits (MCUCR bits 0 and 1)
+    MCUCR_Reg &= ~((1 << EXTI_ISC00) | (1 << EXTI_ISC01));
 
+    // Set ISC00 and ISC01 according to SensControl
+    switch (SensControl) {
+        case EXTI_LowLevel:
+            // ISC01 = 0, ISC00 = 0
+            break;
+
+        case EXTI_AnyChange:
+            // ISC01 = 0, ISC00 = 1
+        	MCUCR_Reg |= (1 << EXTI_ISC00);
+            break;
+
+        case EXTI_Falling:
+            // ISC01 = 1, ISC00 = 0
+        	MCUCR_Reg |= (1 << EXTI_ISC01);
+            break;
+
+        case EXTI_Rising:
+            // ISC01 = 1, ISC00 = 1
+        	MCUCR_Reg |= (1 << EXTI_ISC00) | (1 << EXTI_ISC01);
+            break;
+
+        default:
+            // Default to low level if invalid value
+            break;
+    }
+
+    // Enable INT0 (bit 6 in GICR)
+    GICR_Reg |= (1 << EXTI_INT0);
 }
 
 void mEXTI1_Enable(uint8_t SensControl)
