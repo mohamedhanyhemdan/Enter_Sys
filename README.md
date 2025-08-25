@@ -1,4 +1,4 @@
-🚪 EnterSys – Smart Door Access System
+🚪 ENTER SYSTEM – Smart Door Access System
 
 A microcontroller-based access control system built using ATmega32, fully developed with custom drivers for all peripherals. The project was part of the Microcontroller-Based Systems Track (NTI Summer Internship), focusing on low-level embedded systems programming.
 
